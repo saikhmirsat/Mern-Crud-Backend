@@ -18,7 +18,7 @@ productRoute.get("/:id", async (req, res) => {
         const data = await ProductModel.find({ _id: id })
         res.send(data)
     } catch (err) {
-        res.send("Can't get data")
+        res.send({ "msg": "Something wrong" })
     }
 })
 
@@ -27,7 +27,7 @@ productRoute.post('/add', async (req, res) => {
     try {
         const prod = new ProductModel(data)
         await prod.save()
-        res.send("Product added successfully")
+        res.send({ "msg": "Product added successfully" })
     } catch (err) {
         console.log(err)
     }
