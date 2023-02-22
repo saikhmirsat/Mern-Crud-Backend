@@ -3,7 +3,9 @@ const { connection } = require('./config/db')
 const { productRoute } = require("./Routes/product.route")
 const { cartproductRoute } = require("./Routes/cartproducts.route")
 require('dotenv').config()
+var cors = require('cors')
 
+app.use(cors())
 const app = express()
 app.use(express.json())
 
