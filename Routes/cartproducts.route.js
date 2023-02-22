@@ -3,7 +3,7 @@ const { CartProductModel } = require('../Model/cartproducts.model')
 
 const cartproductRoute = express.Router()
 
-cartproductRoute.get('/', async (res, res) => {
+cartproductRoute.get('/', async (req, res) => {
     try {
         const data = await CartProductModel.find()
         res.send(data)
