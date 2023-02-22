@@ -1,6 +1,7 @@
 const express = require('express')
 const { connection } = require('./config/db')
 const { productRoute } = require("./Routes/product.route")
+const { cartproductRoute } = require("./Routes/cartproducts.route")
 require('dotenv').config()
 
 const app = express()
@@ -11,6 +12,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/products', productRoute)
+app.use('/cartproducts', cartproductRoute)
 
 
 app.listen(process.env.Port, async () => {
