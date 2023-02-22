@@ -5,9 +5,9 @@ const { cartproductRoute } = require("./Routes/cartproducts.route")
 require('dotenv').config()
 var cors = require('cors')
 
-app.use(cors())
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 app.get('/', (req, res) => {
     res.send("This is new home")
